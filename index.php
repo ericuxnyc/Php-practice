@@ -30,7 +30,9 @@
     </style>
 </head>
 <body>
-
+<?php
+include "menu.php";
+?>
     <h1>
         <?php
             $greeting = "Hello";
@@ -110,5 +112,27 @@ $books = [
 
     ?>
 </ul>
+
+<h2>Hello World! Today's date is the <?= date('jS \o\f F Y'); ?></h2>
+
+
+<?php
+$target = mktime(0, 0, 0, 9, 30, 2024);
+$today = time();
+$difference = ($target - $today);
+$days = (int)($difference/86400);
+echo "Our event will occur in $days days."
+
+
+?>
+
+<form name="form" action="" method="get">
+    <input type="text" name="answer" id="answer">
+    <button type="submit">submit</button>
+</form>
+
+    <?= $_GET["answer"]; ?>
+
+
 </body>
 </html>
